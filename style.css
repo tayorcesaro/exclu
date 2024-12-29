@@ -1,0 +1,471 @@
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    /* background-color: #880094; */
+    border: none;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffdd57;
+}
+
+main {
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 0 auto 1rem;
+    max-width: 600px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* From Uiverse.io by talhabangyal */ 
+.hamburger {
+    cursor: pointer;
+  }
+  
+  .hamburger input {
+    display: none;
+  }
+  
+  .hamburger svg {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition:
+      stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+  
+  .hamburger input:checked + svg {
+    transform: rotate(-45deg);
+  }
+  
+  .hamburger input:checked + svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+  }
+  
+
+header {
+    animation: slideIn 1s ease-in-out;
+}
+
+button {
+    /* background-color: #980587; */
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    /* background-color: #a3008b; */
+}
+
+img{
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+}
+
+/* From Uiverse.io by MuhammadHasann */ 
+.card {
+    --lime-500: #bdd910;
+    --violet-700: #8a07b8;
+  
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+  
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    min-height: 16rem;
+    background-color: var(--lime-500);
+  
+    border-radius: 0.5rem;
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 7rem;
+    right: 2rem;
+  
+    width: 1.25;
+    aspect-ratio: 1 / 1;
+    background-color: var(--violet-700);
+  
+    border-radius: 9999px;
+  }
+  
+  .card::after {
+    content: "";
+    position: absolute;
+    top: 8.75rem;
+    right: -0.5rem;
+  
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    background-color: var(--violet-700);
+  
+    border-radius: 9999px;
+  }
+  
+  .card .carousel {
+    position: absolute;
+    left: 0;
+  
+    animation: carousel 10s linear var(--carousel_direction, normal) infinite;
+  }
+  
+  .card .carousel[data-direction="right"] {
+    --carousel_direction: reverse;
+  }
+  .card .carousel[data-position="top"] {
+    top: 0.75rem;
+  }
+  .card .carousel[data-position="bottom"] {
+    bottom: 0.75rem;
+  }
+  
+  .card .carousel .carousel__text {
+    font-size: 0.95rem;
+    color: black;
+    text-wrap: nowrap;
+  }
+  
+  @keyframes carousel {
+    to {
+      transform: translate(-50%);
+    }
+  }
+  
+  .card .image {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 0.25rem;
+    margin-bottom: 0.5rem;
+    width: fit-content;
+    aspect-ratio: 1 / 1;
+    background-color: black;
+  
+    border-radius: 0.25rem;
+  }
+  
+  .card .image {
+    width: 100%;
+    max-width: 100px;
+    margin: auto;
+    fill: white;
+  }
+  
+  .card .title {
+    position: relative;
+    z-index: 10;
+  
+    font-size: 1rem;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .card .paragraph {
+    position: relative;
+    z-index: 10;
+  
+    padding-right: 0.25rem;
+  
+    font-size: 0.75rem;
+    color: black;
+  }
+
+  /* button */
+
+
+  /* From Uiverse.io by MuhammadHasann */ 
+.button {
+  --black-700: hsla(0 0% 12% / 1);
+  --border_radius: 9999px;
+  --transtion: 0.3s ease-in-out;
+  --offset: 2px;
+
+  cursor: pointer;
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  transform-origin: center;
+
+  padding: 1rem 2rem;
+  background-color: transparent;
+
+  border: none;
+  border-radius: var(--border_radius);
+  transform: scale(calc(1 + (var(--active, 0) * 0.1)));
+
+  transition: transform var(--transtion);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-700);
+
+  border-radius: var(--border_radius);
+  box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
+    0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
+    0 0 0 calc(var(--active, 0) * 0.375rem) hsl(260 97% 50% / 0.75);
+
+  transition: all var(--transtion);
+  z-index: 0;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
+  background-color: hsla(260 97% 61% / 0.75);
+  background-image: radial-gradient(
+      at 51% 89%,
+      hsla(266, 45%, 74%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 100%, hsla(266, 36%, 60%, 1) 0px, transparent 50%),
+    radial-gradient(at 22% 91%, hsla(266, 36%, 60%, 1) 0px, transparent 50%);
+  background-position: top;
+
+  opacity: var(--active, 0);
+  border-radius: var(--border_radius);
+  transition: opacity var(--transtion);
+  z-index: 2;
+}
+
+.button:is(:hover, :focus-visible) {
+  --active: 1;
+}
+.button:active {
+  transform: scale(1);
+}
+
+.button .dots_border {
+  --size_border: calc(100% + 2px);
+
+  overflow: hidden;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: var(--size_border);
+  height: var(--size_border);
+  background-color: transparent;
+
+  border-radius: var(--border_radius);
+  z-index: -10;
+}
+
+.button .dots_border::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: left;
+  transform: rotate(0deg);
+
+  width: 100%;
+  height: 2rem;
+  background-color: white;
+
+  mask: linear-gradient(transparent 0%, white 120%);
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.button .sparkle {
+  position: relative;
+  z-index: 10;
+
+  width: 1.75rem;
+}
+
+.button .sparkle .path {
+  fill: currentColor;
+  stroke: currentColor;
+
+  transform-origin: center;
+
+  color: hsl(0, 0%, 100%);
+}
+
+.button:is(:hover, :focus) .sparkle .path {
+  animation: path 1.5s linear 0.5s infinite;
+}
+
+.button .sparkle .path:nth-child(1) {
+  --scale_path_1: 1.2;
+}
+.button .sparkle .path:nth-child(2) {
+  --scale_path_2: 1.2;
+}
+.button .sparkle .path:nth-child(3) {
+  --scale_path_3: 1.2;
+}
+
+@keyframes path {
+  0%,
+  34%,
+  71%,
+  100% {
+    transform: scale(1);
+  }
+  17% {
+    transform: scale(var(--scale_path_1, 1));
+  }
+  49% {
+    transform: scale(var(--scale_path_2, 1));
+  }
+  83% {
+    transform: scale(var(--scale_path_3, 1));
+  }
+}
+
+footer{
+background-color: #8a07b8;
+}
+
+ul{
+  list-style-type: none;
+}
+
+@media (min-width:1000px) {
+  .button .text_button{
+    margin: auto;
+  }
+}
+
+.button .text_button {
+  position: relative;
+  margin: auto;
+
+  /* background-image: linear-gradient(
+    90deg,
+    hsla(0 0% 100% / 1) 0%,
+    hsla(0 0% 100% / var(--active, 0)) 120%
+  ); */
+  background-clip: text;
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+
+}
+
+  
