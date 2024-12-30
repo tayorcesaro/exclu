@@ -3,12 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Site</title>
+  <title>Get Started - Exclusive Strategy</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    .btn {
+      margin: 5px;
+    }
+  </style>
 </head>
 <body>
-<h1>Hello-Bootstrap</h1>
+  <div class="container">
+    
+    <h1 class="lead text-center">Follow these simple steps to get started on your journey:</h1>
+
+    <div class="mt-4">
+      <h3>1. Check Your Eligibility</h3>
+      <p>Begin by visiting our <strong>Eligibility Page</strong>. Enter the required information and submit the form to determine if you're eligible to proceed.</p>
+      <a href="/check-qualification.html" class="btn btn-primary">Go to Eligibility Page</a>
+    </div>
+
+    <div class="mt-4">
+      <h3>2. Send Us a Direct Message</h3>
+      <p>Once your eligibility is confirmed, send us a DM on our Instagram page so we can assist you further.</p>
+      <a href="https://www.instagram.com/exclusive_strategy" target="_blank" class="btn btn-success">Go to Instagram</a>
+    </div>
+
+    <div class="mt-4">
+      <h3>3. Connect with Us</h3>
+      <p>If you need additional support or prefer other contact methods, choose one of the following options:</p>
+      <button class="btn btn-success" onclick="triggerTawk()">Chat with Us</button>
+      <a href="mailto:support@exclusive-strategy.com" class="btn btn-success">Send Email</a>
+    </div>
+  </div>
+
+  <script>
+    // Function to trigger the Tawk.to widget
+    function triggerTawk() {
+      // Assuming Tawk.to is already integrated and loaded
+      if (window.Tawk_API) {
+        window.Tawk_API.maximize();
+      } else {
+        alert("Chat widget is not available at the moment.");
+      }
+    }
+  </script>
 </body>
 </html>
