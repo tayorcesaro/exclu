@@ -142,11 +142,7 @@ button:hover {
     /* background-color: #a3008b; */
 }
 
-img{
-  width: 100%;
-  max-width: 300px;
-  margin: auto;
-}
+
 
 /* From Uiverse.io by MuhammadHasann */ 
 .card {
@@ -238,6 +234,11 @@ img{
     background-color: black;
   
     border-radius: 0.25rem;
+  }
+
+  img{
+    max-width: 300px;
+    margin: auto;
   }
   
   .card .image {
