@@ -57,10 +57,10 @@
   <div class="custom-modal-backdrop" id="passwordModal">
     <div class="custom-modal-dialog">
       <h4>Password Required</h4>
-      <small><a href="https://www.instagram.com/exclusive_strategy" target="blank">Click to get password now <br/> (Send Us A Dm) </a></small>
+      <small><a href="https://www.instagram.com/exclusive_strategy" target="blank">Click to get password now <br/> (Send Us A DM)</a></small>
       <input type="password" id="passwordInput" placeholder="Enter the password you were given here">
-      <button onclick="validatePassword()">Check</button> <br/>
-      <a style="text-decoration: none; color: white;" class="btn btn-success mt-5" href="/index.html"> Home</a>
+      <button onclick="validatePassword()">Check</button><br/>
+      <a style="text-decoration: none; color: white;" class="btn btn-success mt-5" href="/index.html">Home</a>
     </div>
   </div>
 
@@ -72,21 +72,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/check-qualification.html">Check Eligibility</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/Aboutus.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a style="text-decoration: line-through;" class="nav-link disabled">Social growth </a> <small style="text-decoration: none;">coming soon</small>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-danger" href="/get-started.html">Get Started</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/check-qualification.html">Check Eligibility</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="/Aboutus.html">About Us</a></li>
+          <li class="nav-item"><a style="text-decoration: line-through;" class="nav-link disabled">Social Growth</a> <small style="text-decoration: none;">coming soon</small></li>
+          <li class="nav-item"><a class="btn btn-danger" href="/get-started.html">Get Started</a></li>
         </ul>
       </div>
     </div>
@@ -115,19 +105,16 @@
         </div>
         
         <div class="d-grid gap-2 mt-3">
-          <button type="submit" class="btn btn-danger">Check Eligibility</button>
+          <button id="eligibilityButton" type="submit" class="btn btn-danger">Check Eligibility</button>         
         </div>
       </form>
     </div>
-
   </div>
   
-
   <script>
     const modal = document.getElementById("passwordModal");
     const mainContent = document.getElementById("mainContent");
 
-    // Example eligible users database
     const eligibleUsers = ["ryanwilliamsmp", "onwardnation", "foundmyfitness"];
 
     function validatePassword() {
@@ -140,16 +127,25 @@
       }
     }
 
-    function checkEligibility(event) {
+    document.querySelector("form[name='eligibility-form']").addEventListener("submit", function (event) {
       event.preventDefault();
+      const button = document.getElementById("eligibilityButton");
+      button.innerHTML = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Checking Eligibility...`;
+      button.disabled = true;
+
       const username = document.getElementById("userName").value;
 
-      if (eligibleUsers.includes(username)) {
-        displayEligibleModal();
-      } else {
-        displaySupportPage();
-      }
-    }
+      setTimeout(() => {
+        button.innerHTML = "Check Eligibility";
+        button.disabled = false;
+
+        if (eligibleUsers.includes(username)) {
+          displayEligibleModal();
+        } else {
+          displaySupportPage();
+        }
+      }, 3000);
+    });
 
     function displayEligibleModal() {
       const modal = document.createElement("div");
@@ -168,7 +164,7 @@
         <div style="text-align:center; margin-top:50px;">
           <h2>Sorry, your username is not eligible.</h2>
           <p>Contact support via Instagram for assistance.</p>
-          <a href="https://www.instagram.com/exclusive_strategy" target="_blank"> <br/>
+          <a href="https://www.instagram.com/exclusive_strategy" target="_blank">
             <button style="padding: 10px 20px; background-color: purple; color: white; border: none; border-radius: 5px; cursor: pointer;">
               Contact Support
             </button>
@@ -181,15 +177,12 @@
       document.querySelector(".custom-modal-backdrop").remove();
     }
 
-    document.querySelector("form[name='eligibility-form']").addEventListener("submit", checkEligibility);
-
     window.onload = function () {
       modal.style.display = "flex";
     };
   </script>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATpIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
